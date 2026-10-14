@@ -4,31 +4,30 @@
   "split": "test",
   "dataset_version": "d10-21e4070301",
   "n_images": 311,
-  "parse_valid_rate": 0.9356913183279743,
+  "parse_valid_rate": 0.9389067524115756,
   "missing_predictions": 0,
   "micro": {
-    "precision": 0.06581740976645435,
-    "recall": 0.05317324185248713,
-    "f1": 0.058823529411764705,
-    "tp": 31,
-    "fp": 440,
-    "fn": 552
+    "precision": 0.2060931899641577,
+    "recall": 0.19725557461406518,
+    "f1": 0.20157756354075373,
+    "tp": 115,
+    "fp": 443,
+    "fn": 468
   },
   "per_class": {
-    "pothole": {"precision": 0.0, "recall": 0.0, "f1": 0.0, "tp": 0, "fp": 0, "fn": 121},
-    "crack": {"precision": 0.06581740976645435, "recall": 0.10367892976588629, "f1": 0.08051948051948052, "tp": 31, "fp": 440, "fn": 268},
-    "manhole": {"precision": 0.0, "recall": 0.0, "f1": 0.0, "tp": 0, "fp": 0, "fn": 163},
-    "other": {"precision": 0.0, "recall": 0.0, "f1": 0.0, "tp": 0, "fp": 0, "fn": 0}
+    "pothole": {"precision": 0.1794871794871795, "recall": 0.11570247933884298, "f1": 0.1407035175879397, "tp": 14, "fp": 64, "fn": 107},
+    "crack": {"precision": 0.11568123393316196, "recall": 0.1505016722408027, "f1": 0.1308139534883721, "tp": 45, "fp": 344, "fn": 254},
+    "manhole": {"precision": 0.6153846153846154, "recall": 0.34355828220858897, "f1": 0.44094488188976383, "tp": 56, "fp": 35, "fn": 107}
   },
-  "mean_iou": 0.6121519763801861,
-  "fp_per_image": 1.414790996784566,
-  "f1_ci95": [0.03883495145631067, 0.07787274453941122],
+  "mean_iou": 0.6443888559327355,
+  "fp_per_image": 1.4244372990353698,
+  "f1_ci95": [0.1679389312977099, 0.23872679045092837],
   "score_version": 1,
   "coord": "norm1000",
   "meta": {
     "trainable_params": 33030144,
-    "peak_vram_gb": 3.4220728874206543,
-    "train_minutes": 6.241100068887075
+    "peak_vram_gb": 5.241800308227539,
+    "train_minutes": 25.319776487350463
   },
-  "note": "Interim E1 run. It is below E0 F1 and must be retrained before submission."
+  "note": "New E1 run after balanced sampling and gradient accumulation; authoritative full evidence is report/evidence/e1.json."
 }

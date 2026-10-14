@@ -7,18 +7,18 @@
 - [ ] Có ít nhất hai file `report/evidence/e4_*.json`.
 - [ ] Có tối thiểu 6 ảnh minh hoạ prediction/ground truth.
 - [x] Không track `data/`, `work/`, `.env` hoặc model weights.
-- [ ] Có tối thiểu 5 commits (hiện tại: 3).
+- [ ] Có tối thiểu 5 commits (hiện tại: 4).
 - [ ] `python scripts/check_submission.py` trả về 0 FAIL, 0 WARN.
 
 ## Kết quả đã có
 
 - E0: F1 0.073, CI95 0.051–0.097.
-- E1: F1 0.0588, CI95 0.0388–0.0779; kết quả hiện tại thấp hơn E0 và cần retrain.
+- E1: F1 0.202, CI95 0.168–0.239; cao hơn E0 0.129 điểm.
 - Bản lưu tạm: `report/progress/`.
 
 ## Trước khi nộp
 
-1. Retrain E1 từ model gốc sạch và đạt tiêu chí rubric.
+1. Đã retrain E1 từ model gốc sạch; cần chép evidence chính thức từ Kaggle vào repo.
 2. Chạy E2, E3 và E4 trên test, lưu evidence bằng `scripts/score.py`.
 3. Xuất ít nhất 6 ảnh minh hoạ và cập nhật Câu 9 trong `REPORT.md`.
 4. Chạy lại checker, sau đó mới push GitHub.

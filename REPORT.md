@@ -6,7 +6,7 @@ Họ tên: Ngô Thế Việt
 | Mã | Setup | Tham số huấn luyện | VRAM đỉnh (GB) | Phút | F1 | CI95 | FP/ảnh | F1 pothole | F1 crack | F1 manhole |
 |---|---|---|---|---|---|---|---|---|---|---|
 | E0 | zero-shot | 0 | chưa ghi | chưa ghi | 0.073 | 0.051–0.097 | 0.99 | 0.150 | 0.015 | 0.158 |
-| E1 | LoRA LLM | 33,030,144 | 3.422 | 6.24 | 0.0588 | 0.0388–0.0779 | 1.415 | 0.000 | 0.081 | 0.000 |
+| E1 | LoRA LLM | 33,030,144 | 5.242 | 25.32 | 0.2016 | 0.1679–0.2387 | 1.424 | 0.141 | 0.131 | 0.441 |
 | E2 | + projector | chưa chạy | chưa chạy | chưa chạy | chưa chạy | chưa chạy | chưa chạy | chưa chạy | chưa chạy | chưa chạy |
 | E3 | + LoRA ViT | chưa chạy | chưa chạy | chưa chạy | chưa chạy | chưa chạy | chưa chạy | chưa chạy | chưa chạy | chưa chạy |
 | E4 | chưa chạy | chưa chạy | chưa chạy | chưa chạy | chưa chạy | chưa chạy | chưa chạy | chưa chạy | chưa chạy | chưa chạy |
@@ -32,7 +32,7 @@ Projector cần được giữ ở float32 khi train để tránh mất độ ch
 Split theo session giúp các frame gần nhau không bị rơi vào cả train và test, tránh leakage làm F1 cao giả. Số liệu cố định: train 1,422 ảnh/3,515 box (pothole 1,074; crack 1,750; manhole 691), val 276 ảnh/639 box (66; 470; 103), test 311 ảnh/583 box (121; 299; 163).
 
 ### Câu 7 — So sánh E1/E2/E3: mở projector và LoRA trên ViT có đáng không (F1, CI95, VRAM, thời gian)?
-E0 đạt F1 0.073. E1 hiện đạt F1 0.0588, thấp hơn E0 và bị collapse sang lớp crack (pothole/manhole F1 bằng 0), nên chưa thể kết luận LoRA có lợi. E2 và E3 chưa chạy.
+E0 đạt F1 0.073. Sau khi cân bằng lấy mẫu và tích luỹ gradient, E1 đạt F1 0.202, cao hơn E0 0.129 điểm; CI95 của E1 là 0.168–0.239. E1 vẫn có chênh lệch giữa các lớp, trong đó manhole tốt nhất (F1 0.441), crack thấp nhất (F1 0.131). E2 và E3 chưa chạy.
 
 ### Câu 8 — Tập test có 311 ảnh: khoảng tin cậy rộng thế nào, và điều đó giới hạn kết luận so sánh các setup ra sao?
 Test chỉ có 311 ảnh nên CI95 còn rộng: E0 là 0.051–0.097, E1 là 0.0388–0.0779. Vì vậy các chênh lệch nhỏ giữa setup chưa đủ mạnh để kết luận nếu khoảng tin cậy còn chồng lấn.
@@ -45,4 +45,4 @@ E4 chưa chạy. Dự kiến dùng ablation rank với hai giá trị r = 4 và 
 
 ## Nhìn lại
 
-Điểm cần kiểm tra tiếp: E1 từng bị PEFT bọc lồng khi chạy lại cùng model; notebook đã được chỉnh để train lại với model gốc, lấy mẫu cân bằng ba lớp và tích luỹ gradient 4 micro-batch.
+Điểm cần kiểm tra tiếp: E1 từng bị PEFT bọc lồng khi chạy lại cùng model; sau khi train lại với model gốc, lấy mẫu cân bằng ba lớp và tích luỹ gradient 4 micro-batch, F1 đã tăng lên 0.202.
