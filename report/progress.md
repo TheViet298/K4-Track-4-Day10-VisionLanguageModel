@@ -1,6 +1,6 @@
 # Lab Day 10 — tiến độ tạm thời
 
-Đây là nhật ký kết quả đã chạy trên Kaggle, chưa phải bộ evidence cuối để nộp.
+Nhật ký kết quả đã chạy trên Kaggle -> chưa phải bộ evidence cuối
 
 | Run | F1 | CI95 | Parse valid | Ghi chú |
 |---|---:|---:|---:|---|
