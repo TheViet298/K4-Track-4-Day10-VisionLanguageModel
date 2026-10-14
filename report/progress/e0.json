@@ -1,0 +1,18 @@
+{
+  "status": "interim",
+  "name": "E0",
+  "split": "test",
+  "dataset_version": "d10-21e4070301",
+  "n_images": 311,
+  "parse_valid_rate": 0.862,
+  "f1": 0.073,
+  "f1_ci95": [0.051, 0.097],
+  "mean_iou": 0.614,
+  "fp_per_image": 0.99,
+  "per_class_f1": {
+    "pothole": 0.150,
+    "crack": 0.015,
+    "manhole": 0.158
+  },
+  "note": "Summary copied from the completed Kaggle E0 run; retain the generated report/evidence/e0.json when available."
+}

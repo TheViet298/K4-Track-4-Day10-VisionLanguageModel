@@ -1,0 +1,34 @@
+{
+  "status": "interim",
+  "name": "E1",
+  "split": "test",
+  "dataset_version": "d10-21e4070301",
+  "n_images": 311,
+  "parse_valid_rate": 0.9356913183279743,
+  "missing_predictions": 0,
+  "micro": {
+    "precision": 0.06581740976645435,
+    "recall": 0.05317324185248713,
+    "f1": 0.058823529411764705,
+    "tp": 31,
+    "fp": 440,
+    "fn": 552
+  },
+  "per_class": {
+    "pothole": {"precision": 0.0, "recall": 0.0, "f1": 0.0, "tp": 0, "fp": 0, "fn": 121},
+    "crack": {"precision": 0.06581740976645435, "recall": 0.10367892976588629, "f1": 0.08051948051948052, "tp": 31, "fp": 440, "fn": 268},
+    "manhole": {"precision": 0.0, "recall": 0.0, "f1": 0.0, "tp": 0, "fp": 0, "fn": 163},
+    "other": {"precision": 0.0, "recall": 0.0, "f1": 0.0, "tp": 0, "fp": 0, "fn": 0}
+  },
+  "mean_iou": 0.6121519763801861,
+  "fp_per_image": 1.414790996784566,
+  "f1_ci95": [0.03883495145631067, 0.07787274453941122],
+  "score_version": 1,
+  "coord": "norm1000",
+  "meta": {
+    "trainable_params": 33030144,
+    "peak_vram_gb": 3.4220728874206543,
+    "train_minutes": 6.241100068887075
+  },
+  "note": "Interim E1 run. It is below E0 F1 and must be retrained before submission."
+}
